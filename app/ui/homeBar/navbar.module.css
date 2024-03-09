@@ -12,3 +12,16 @@
     height: 2.5rem;
     
 }
+
+@keyframes slideAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  .slide {
+    animation: slideAnimation 0.5s forwards;
+  }
+  
