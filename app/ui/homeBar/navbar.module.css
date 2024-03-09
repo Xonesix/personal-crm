@@ -1,0 +1,14 @@
+.navBar
+{
+    background-color: #232323;
+}
+.miniMenu {
+    background-color:#171717;
+    display: flex;
+    justify-content: left;
+    padding-left: 15px;
+    align-items: center;
+    width:40rem;
+    height: 2.5rem;
+    
+}
