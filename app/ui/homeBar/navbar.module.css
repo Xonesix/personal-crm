@@ -24,4 +24,8 @@
   .slide {
     animation: slideAnimation 0.5s forwards;
   }
-  
+
+.hoverEffect:hover {
+  background-color: #171717; /* Replace darkerColor with the darker background color you want */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+}
