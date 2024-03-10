@@ -11,25 +11,26 @@ const NavBar = (prop:props) => {
     return (
     <div>
     <div className={` ${styles.miniMenu}  rounded-r-md flex-row space-x-10 drop-shadow-lg`}>
-        <div className={clsx('slide', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black': prop.currLink === '/home' })}>
+        <div className={clsx('font-bold', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black font-bold': prop.currLink === '/home' })}>
             <Link href="/home"><h2>Home</h2></Link>
         </div>
     
-        <div className={clsx('slide', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black': prop.currLink === '/interactions' })}>
+        <div className={clsx('font-bold', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black font-bold': prop.currLink === '/interactions' })}>
             <Link href="/interactions"><h2>Interactions</h2></Link>
         </div>
 
-        <div className={clsx('', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black': prop.currLink === '/people' })}>
+        <div className={clsx('font-bold', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black font-bold': prop.currLink === '/people' })}>
             <Link href="/people"><h2>People</h2></Link>
         </div>
 
-        <div className={clsx('', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black': prop.currLink === '/analytics' })}>
+        <div className={clsx('font-bold', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black font-bold': prop.currLink === '/analytics' })}>
             <Link href="/analytics"><h2>Analytics</h2></Link>
         </div>
-        <div className={clsx('', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black': prop.currLink === '/resources' })}>
+        <div className={clsx('font-bold', { 'bg-green-400 p-2 rounded-lg drop-shadow-sm text-black font-bold': prop.currLink === '/resources' })}>
             <Link href="/resources"><h2>Resources</h2></Link>
         </div>
-  </div></div>
+  </div>
+  </div>
   )
 }
 
