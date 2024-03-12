@@ -74,7 +74,7 @@ export async function fetchLastInteractions() {
     return interactions;
   } catch (error) {
     console.log(error);
-    return "It seems there was an error fetching last interactions.";
+    return [];
   }
 }
 

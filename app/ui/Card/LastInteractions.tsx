@@ -16,7 +16,7 @@ const LastInteractionsCard = async () => {
             <h2>Description</h2>
           </div>
           {/* Map over interactions and return InfoBar for each */}
-          {interactions.map((interaction:InteractionObject) => (
+          {interactions.map((interaction) => (
             <InfoBar key={interaction.id} description={interaction.description} date_of={interaction.date_of} />
           ))}
           
