@@ -1,5 +1,5 @@
 .card {
-    width: 35rem;
+    width: 50rem;
     height: 30rem;
     padding: 10px;
     background-color: #232323;
@@ -8,15 +8,45 @@
 .spacer
 {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr 1fr 2fr .5fr;
-}
+    grid-template-columns: 1fr 1fr 1.5fr 3fr 1fr;}
 .infobar
 {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr 1fr 2fr .5fr;
+    grid-template-columns: 1fr 1fr 1.5fr 3fr 1fr;
 }
 .buttons
 {
     grid-column-start: 5;
+}
+.icons
+{
+
+    background-color: #1a1919;
+    border-radius: 5px;
+    filter: drop-shadow(black, 10px 10px 10px)
+    
+}
+.skeleton
+{
+    animation: skeleton-loading 1s linear infinite alternate;
+    width: 100%;
+}
+.thinSkeleton
+{
+    animation: skeleton-loading 1s linear infinite alternate;
+    width: 70%;
+}
+@keyframes skeleton-loading
+{
+    0%
+    {
+        background-color: hsl(0, 0%, 15%);
+
+    }
+    100%
+    {
+        background-color: hsl(0, 0%, 21%);
+
+    }
 }
 

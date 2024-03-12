@@ -15,15 +15,17 @@ interface people
   phone: string,
   description: string
 }
-export async function GET(request: Request) {
-  try {
-    const result =
-      await sql`CREATE TABLE Pets ( Name varchar(255), Owner varchar(255) );`;
-    return NextResponse.json({ result }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ error }, { status: 500 });
-  }
-}
+interface InteractionObject
+{
+  id: number,
+  userid:number,
+  date_of:string,
+  location:string,
+  remind:boolean,
+  status:number,
+  description:string
+};
+
 function getUserID() 
 {
   let userId = 1;
@@ -48,6 +50,34 @@ export async function fetchPeople()
   }
   
 }
+export async function fetchLastInteractions() {
+  noStore();
+  let accID = getUserID();
+  // await new Promise(resolve => setTimeout(resolve, 3000));
+
+  try {
+    const result = await sql<InteractionObject>`
+      SELECT *,
+             to_char(interactions.date_of, 'YYYY-MM-DD HH24:MI:SS') AS date_of_string
+      FROM interactions 
+      WHERE userid = ${accID} 
+      ORDER BY interactions.date_of DESC 
+      LIMIT 5;
+    `;
+
+    // Map over the rows and convert the date_of field to a string
+    const interactions = result.rows.map(interaction => ({
+      ...interaction,
+      date_of: interaction.date_of.toString().substring(0,10)
+    }));
+
+    return interactions;
+  } catch (error) {
+    console.log(error);
+    return "It seems there was an error fetching last interactions.";
+  }
+}
+
 // Use noStore in fetch functions  import { unstable_noStore as noStore } from 'next/cache';
 
 // SQL Functions

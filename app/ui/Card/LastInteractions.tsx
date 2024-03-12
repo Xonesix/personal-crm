@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from "@/app/ui/Card/dashcard.module.css";
 import InfoBar from './InfoBar';
-const Dashcard = () => {
+import { fetchLastInteractions } from '@/app/api/database';
+
+const LastInteractionsCard = async () => {
+  
+  const interactions = await fetchLastInteractions();
   return (
     <div className='z-50'>
         <h1 className=' mt-5 ml-5 text-4xl font-bold text-transparent bg-clip-text inline-block bg-gradient-to-r from-green-400 to-purple-500'>Last Interactions</h1>
@@ -9,14 +13,17 @@ const Dashcard = () => {
           <div className={`font-bold mr-4 ml-2 mt-1 ${styles.spacer}`}>
             <h2>Name</h2>
             <h2>Date</h2>
-            <h2>Who</h2>
+            <h2>Description</h2>
           </div>
-          <InfoBar />
-          <InfoBar />
+          {/* Map over interactions and return InfoBar for each */}
+          {interactions.map((interaction:InteractionObject) => (
+            <InfoBar key={interaction.id} description={interaction.description} date_of={interaction.date_of} />
+          ))}
+          
         </div>
 
     </div>
   );
 }
 
-export default Dashcard
+export default LastInteractionsCard;
