@@ -1,0 +1,22 @@
+.card {
+    width: 35rem;
+    height: 30rem;
+    padding: 10px;
+    background-color: #232323;
+    filter: drop-shadow(rgb(17, 17, 17) 0px 10px 10px)
+}
+.spacer
+{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1fr 2fr .5fr;
+}
+.infobar
+{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1fr 2fr .5fr;
+}
+.buttons
+{
+    grid-column-start: 5;
+}
+

@@ -1,0 +1,6 @@
+.background
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #171717;
+}
