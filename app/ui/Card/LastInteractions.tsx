@@ -3,6 +3,7 @@ import styles from "@/app/ui/Card/dashcard.module.css";
 import InfoBar from "./InfoBar";
 import { fetchLastInteractions } from "@/app/api/database";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 //Cool code d ssf
 const LastInteractionsCard = async () => {
   const interactions = await fetchLastInteractions();
@@ -15,9 +16,9 @@ const LastInteractionsCard = async () => {
         id="backgroundCard"
         className={`${styles.card} mt-2 ml-5 rounded-xl flex flex-col`}
       >
-        <div className={`font-bold mr-4 ml-2 mt-1 ${styles.spacer}`}>
-          <h2>Date</h2>
-          <h2>Description</h2>
+        <div className={`font-bold text-xl mr-4 ml-4 mt-1 ${styles.spacer}`}>
+          <h2 className="self-center">Date</h2>
+          <h2 className="self-center">Description</h2>
         </div>
         {/* Map over interactions and return InfoBar for each */}
         {interactions.map((interaction) => (
@@ -39,14 +40,15 @@ const LastInteractionsCard = async () => {
             />{" "}
             {/* Center the arrow vertically */}
           </button>
-          <button className="flex align-middle justify-between bg-green-400 text-black py-1 px-4 font-semibold rounded-md drop-shadow-xl transition ease-in-out hover:-translate-y-1 delay-75">
-            <div>Create Interaction</div>
-            <ArrowRightIcon
-              className="self-center ml-3"
-              strokeWidth={100}
-            />{" "}
-            {/* Center the arrow vertically */}
-          </button>
+          <Link href={"/interactions/create"}>
+            <button className="flex align-middle justify-between bg-green-400 text-black py-1 px-4 font-semibold rounded-md drop-shadow-xl transition ease-in-out hover:-translate-y-1 delay-75">
+              <div>Create Interaction</div>
+              <ArrowRightIcon
+                className="self-center ml-3"
+                strokeWidth={100}
+              />{" "}
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,0 +1,12 @@
+.card {
+  width: 100%;
+  height: 80vh;
+  padding: 10px;
+  background-color: #232323;
+  filter: drop-shadow(rgb(17, 17, 17) 0px 10px 10px);
+}
+
+.input {
+  background-color: #171717;
+  width: 50vh;
+}

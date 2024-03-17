@@ -11,8 +11,8 @@ const InfoBar = (props: InteractionObject) => {
     <div
       className={`mt-3 p-2 m-2 border-b-2 border-neutral-600 ${styles.infobar}`}
     >
-      <p className="self-center">{props.date_of}</p>
-      <p className="self-center">{props.description}</p>
+      <p className="self-center font-semibold">{props.date_of}</p>
+      <p className="self-center font-semibold">{props.description}</p>
       <div className={`w-15 flex flex-row justify-around ${styles.buttons}`}>
         <div className="flex flex-row  justify-between self-center">
           <div className={`p-2 mr-1 ${styles.icons} self-center flex`}>
