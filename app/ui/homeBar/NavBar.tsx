@@ -15,7 +15,7 @@ interface HoverStyles {
 const NavBar = (prop: props) => {
   const [hoverStyle, setHoverStyle] = useState<HoverStyles>({});
   function handleHover(id: string) {
-    if (prop.currLink !== "/" + id) {
+    if (!prop.currLink.includes("/" + id)) {
       setHoverStyle((prevStyles) => ({
         ...prevStyles,
         [id]: {

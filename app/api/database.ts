@@ -15,7 +15,7 @@ interface people {
   phone: string;
   description: string;
 }
-interface InteractionObject {
+export interface InteractionObject {
   id: number;
   userid: number;
   date_of: string;
@@ -25,13 +25,13 @@ interface InteractionObject {
   description: string;
 }
 
-function getUserID() {
+export async function getUserID() {
   let userId = 1;
   return userId;
 }
 export async function fetchPeople() {
   noStore();
-  let accID = getUserID();
+  let accID = await getUserID();
   try {
     // await new Promise(resolve => setTimeout(resolve, 3000));
 
@@ -46,7 +46,7 @@ export async function fetchPeople() {
 }
 export async function fetchLastInteractions() {
   noStore();
-  let accID = getUserID();
+  let accID = await getUserID();
   // await new Promise(resolve => setTimeout(resolve, 3000));
 
   try {
