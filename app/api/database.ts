@@ -55,7 +55,7 @@ export async function fetchLastInteractions() {
              to_char(interactions.date_of, 'YYYY-MM-DD HH24:MI:SS') AS date_of_string
       FROM interactions 
       WHERE userid = ${accID} 
-      AND interactions.date_of::date < CURRENT_DATE -- Filter out dates equal to today
+      AND interactions.date_of::date <= CURRENT_DATE -- Filter out dates equal to today
       ORDER BY interactions.date_of DESC 
       LIMIT 5;
     `;
